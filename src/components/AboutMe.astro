@@ -1,0 +1,17 @@
+---
+import { Content } from '../content/about-me.mdx'
+import { Image } from 'astro:assets';
+import psychoterapeuta from '../images/psychoterapeuta.png';
+---
+
+
+<div class="h-full flex items-center justify-center flex-col relative">
+    <div class="flex gap-8 p-8 h-full flex-col xl:flex-row">
+        <div class="w-full max-w-[40rem] h-full md:sticky top-32 flex items-start">
+            <Image class="w-full rounded-xl" src={psychoterapeuta} alt="Kamil" />
+        </div>
+        <div class="prose">
+            <Content />
+        </div>
+    </div>
+</div>

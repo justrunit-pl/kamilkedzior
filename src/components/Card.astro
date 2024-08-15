@@ -1,0 +1,17 @@
+---
+import { PageLayout } from './PageLayout/PageLayout'
+interface Props {
+	title: string;
+	body: string;
+	href: string;
+}
+
+const { href, title, body } = Astro.props;
+
+---
+
+<PageLayout title={title}>
+	<article class="text-white">
+		<h1>{title}</h1>
+	</article>
+</PageLayout>

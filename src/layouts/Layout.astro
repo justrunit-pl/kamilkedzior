@@ -1,0 +1,33 @@
+---
+import Footer from "../components/Footer.astro";
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import '@fontsource/marcellus';
+import { Header } from '../components/Header/Header';
+import { ViewTransitions } from 'astro:transitions';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{`KK | ${title}`}</title>
+		<ViewTransitions />
+	</head>
+	<body class="font-marcellus">
+		<header class="sticky w-full h-24 top-0 z-10 ">
+			<Header client:load />
+		</header>
+		<main class="h-full flex justify-center w-full mb-24"><slot/></main>
+		<footer class="fixed bottom-0 w-full h-24">
+			<Footer />
+		</footer>
+	</body>
+</html>
