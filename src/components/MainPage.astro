@@ -1,15 +1,79 @@
 ---
-import { Image } from 'astro:assets';
-import localBirches from '../images/gaj-brzozowy-jesienia.jpeg';
+import mainImage from '../images/droga.jpg';
+import styles from './MainPage.module.scss';
+import { Img } from "astro-imagetools/components";
+import { LandingTitle } from "./LandingTitle"
+import { Header } from "./Header/Header";
 ---
 
-<div class="h-full relative w-full">
-    <div class="flex h-full w-full">
-        <!--<div class="w-full flex justify-center items-center h-full">-->
-        <!--    <p class="text-4xl">Jestem Kamil</p>-->
-        <!--</div>-->
-        <!--<div class="w-full">-->
-            <Image class="h-full object-cover grayscale w-full" alt="zdjecie" src={localBirches} />
-        <!--</div>-->
+
+<div class="h-full md:h-[100vh] flex items-center justify-center flex-col relative overflow-x-hidden w-full">
+    <div class="flex gap-0 h-full flex-row xl:flex-row w-full">
+        <div class={`flex flex-col grow-[3] bg-primary-600 pb-24 text-white relative h-full font-primary whitespace-nowrap ${styles.CenterContainer}`}>
+            <header class="w-full flex justify-left items-center pt-2">
+                <Header hideLogo={false} client:load class="h-fit" />
+            </header>
+            <div class="flex h-full items-center justify-start px-2 md:px-8">
+                <div class="flex h-full pt-12 flex-col justify-start md:justify-center items-start gap-8">
+                    <div class="flex flex-col gap-3">
+                        <div  class="order-2 md:order-1">
+                            <LandingTitle client:load />
+                        </div>
+                        <div class="md:hidden w-full order-1 md:order-2">
+                            <Img
+                                    breakpoints={{ count: 1 }}
+                                    placeholder="blurred"
+                                    objectFit="cover"
+                                    attributes={{ img: { class: ` !w-full rounded`}}}
+                                    alt="zdjecie"
+                                    src="/src/images/0010.jpg"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-artistic border-y-2">W drodze do siebie</h3>
+                    </div>
+                    <div>
+                        <p>camillo@gmail.com</p>
+                        <span><a href="tel:+48708708708">+48 708 708 708</a></span>
+                    </div>
+                    <a href="/kontakt/" class="border-2 rounded p-2">Skontaktuj się!</a>
+                </div>
+            </div>
+        </div>
+        <div class={`hidden h-full grow-[1] flex flex-col items-center justify-center bg-primary-700 text-white font-[200] ${styles.NavbarContainer}`}>
+            <ul class="flex flex-col gap-0 gap-1 px-4">
+                <li class="p-2 group flex flex-col gap-2 relative">
+                    <div class="absolute z-0 left-0 top-0 h-full w-full bg-primary-200/20 scale-x-0 origin-left group-hover:scale-100 transition-transform rounded" />
+                    <a class="z-10" href="/o-mnie/">O mnie</a>
+                </li>
+                <li class="p-2 group flex flex-col gap-2 relative">
+                    <div class="absolute z-0 left-0 top-0 h-full w-full bg-primary-200/20 scale-x-0 origin-left group-hover:scale-100 transition-transform rounded" />
+                    <a class="z-10" href="/o-mnie/">Gestalt - czym jest?</a>
+                </li>
+                <li class="p-2 group flex flex-col gap-2 relative">
+                    <div class="absolute z-0 left-0 top-0 h-full w-full bg-primary-200/20 scale-x-0 origin-left group-hover:scale-100 transition-transform rounded" />
+                    <a class="z-10" href="/o-mnie/">Oferuję</a>
+                </li>
+                <li class="p-2 group flex flex-col gap-2 relative">
+                    <div class="absolute z-0 left-0 top-0 h-full w-full bg-primary-200/20 scale-x-0 origin-left group-hover:scale-100 transition-transform rounded" />
+                    <a class="z-10" href="/o-mnie/">Komu pomagam?</a>
+                </li>
+                <li class="p-2 group flex flex-col gap-2 relative">
+                    <div class="absolute z-0 left-0 top-0 h-full w-full bg-primary-200/20 scale-x-0 origin-left group-hover:scale-100 transition-transform rounded" />
+                    <a class="z-10" href="/o-mnie/">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+        <div class={`h-full hidden md:flex flex grow-[1] items-start ${styles.ImageContainer}`}>
+            <Img
+                    breakpoints={{ count: 1 }}
+                    placeholder="blurred"
+                    objectFit="cover"
+                    attributes={{ img: { class: `!h-full !w-full`}}}
+                    alt="zdjecie"
+                    src="/src/images/0010.jpg"
+            />
+        </div>
     </div>
 </div>

@@ -1,17 +1,29 @@
 ---
 import { Content } from '../content/about-me.mdx'
-import { Image } from 'astro:assets';
+import { Img } from "astro-imagetools/components";
 import psychoterapeuta from '../images/psychoterapeuta.png';
 ---
 
 
-<div class="h-full flex items-center justify-center flex-col relative">
-    <div class="flex gap-8 p-8 h-full flex-col xl:flex-row">
-        <div class="w-full max-w-[40rem] h-full md:sticky top-32 flex items-start">
-            <Image class="w-full rounded-xl" src={psychoterapeuta} alt="Kamil" />
+<div class="h-[100vh] flex items-center justify-center flex-col relative pt-24 overflow-hidden w-full">
+    <div class="flex gap-8 h-full flex-row xl:flex-row w-full">
+        <div class="h-[100dvh] grow-[1] flex items-start">
+            <Img
+                    breakpoints={{ count: 1 }}
+                    placeholder="blurred"
+                    objectFit="cover"
+                    alt="zdjecie"
+                    src="/src/images/0010.jpg"
+            />
         </div>
-        <div class="prose">
-            <Content />
+        <!--<div class="prose grow-[4] font-poppins max-w-full w-full overflow-scroll h-full">-->
+        <!--    <Content />-->
+        <!--</div>-->
+        <div class="flex flex-col justify-center h-full gap-1 grow-[4] w-full font-primary">
+            <h1 class="text-5xl">Kamil Kędzior</h1>
+            <h3 class="text-3xl">W drodze do siebie</h3>
+            <p>camillo@gmail.com</p>
+            <span><a href="tel:+48708708708">+48 708 708 708</a></span>
         </div>
     </div>
 </div>

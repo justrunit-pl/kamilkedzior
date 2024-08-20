@@ -2,10 +2,21 @@
 import Footer from "../components/Footer.astro";
 interface Props {
 	title: string;
+	fullWidth?: boolean;
+	hideHeader?: boolean;
+	hideFooter?: boolean;
 }
 
-const { title } = Astro.props;
-import '@fontsource/marcellus';
+const { title, fullWidth, hideHeader, hideFooter = hideHeader } = Astro.props;
+import '@fontsource/montserrat/100.css';
+import '@fontsource/montserrat/200.css';
+import '@fontsource/montserrat/300.css';
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/500.css';
+import '@fontsource/montserrat/600.css';
+import '@fontsource/montserrat/700.css';
+import '@fontsource/montserrat/800.css';
+import "@fontsource/amatic-sc";
 import { Header } from '../components/Header/Header';
 import { ViewTransitions } from 'astro:transitions';
 ---
@@ -21,13 +32,17 @@ import { ViewTransitions } from 'astro:transitions';
 		<title>{`KK | ${title}`}</title>
 		<ViewTransitions />
 	</head>
-	<body class="font-marcellus">
-		<header class="sticky w-full h-24 top-0 z-10 ">
-			<Header client:load />
-		</header>
-		<main class="h-full flex justify-center w-full mb-24"><slot/></main>
-		<footer class="fixed bottom-0 w-full h-24">
+	<body class="font-primary font-light flex flex-col min-h-[100dvh] overflow-x-hidden">
+		{!hideHeader && <header class="fixed w-full h-24 top-0 z-10 bg-primary-500/95  backdrop-blur">
+				<Header client:load />
+			</header>
+		}
+		<main class=`flex justify-center w-full ${fullWidth ? '' : 'px-4 [&>*]:max-w-[40rem] pb-2 pt-28'} grow`>
+			<slot/>
+		</main>
+		{!hideFooter && <footer class="w-full h-fit">
 			<Footer />
 		</footer>
+		}
 	</body>
 </html>

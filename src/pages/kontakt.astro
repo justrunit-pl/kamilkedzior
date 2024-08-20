@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { EnvelopeClosedIcon, Pencil1Icon} from '@radix-ui/react-icons';
+---
+<Layout title="O mnie" fullWidth={false}>
+    <div class="h-full flex items-center justify-center gap-4 flex-col md:flex-row">
+        <div class="flex flex-col gap-1 w-full">
+            <h1 class="font-bold">Napisz do mnie!</h1>
+            <div class="w-full">
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                        <EnvelopeClosedIcon client:visible />
+                    </div>
+                    <input
+                            type="text"
+                            id="input-group-0"
+                            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Twoje imię i nazwisko"
+                    >
+                </div>
+            </div>
+            <div class="w-full">
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                        <EnvelopeClosedIcon client:visible />
+                    </div>
+                    <input
+                            type="email"
+                            id="input-group-1"
+                            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Adres email"
+                    >
+                </div>
+            </div>
+            <div>
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                        <Pencil1Icon client:visible />
+                    </div>
+                    <input type="tel" id="input-group-2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Twój numer telefonu">
+                </div>
+            </div>
+            <div>
+                <textarea id="message" rows="4" class="block p-2.5 w-full h-24 text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Twoja wiadomość"></textarea>
+
+            </div>
+        </div>
+        <div class="w-full h-full">
+            <iframe class="h-full w-full"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d532.5643561007165!2d20.066326243065724!3d49.959067792777326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1724186251440!5m2!1spl!2spl"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</Layout>

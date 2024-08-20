@@ -3,5 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { Offer } from "../components/Offer/offer";
 ---
 <Layout title="Oferta">
-    <Offer client:load />
+    <div class="h-full flex items-center">
+        <Offer client:load />
+    </div>
 </Layout>
