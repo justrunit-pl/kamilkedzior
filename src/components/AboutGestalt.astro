@@ -1,9 +1,21 @@
 ---
 import { Content } from '../content/about-gestalt.mdx';
+import { Img } from "astro-imagetools/components";
 ---
 
 <div class="h-full flex items-center flex-col">
-    <div class="prose">
+    <div class="prose prose-sm flex flex-col">
+        <h1>Moje podejście terapeutyczne</h1>
+        <div>
+            <Img
+                    breakpoints={{ count: 1 }}
+                    placeholder="blurred"
+                    objectFit="cover"
+                    attributes={{ img: { class: ` !w-full rounded-xl mb-0`}}}
+                    alt="zdjecie"
+                    src="/src/images/0020.jpg"
+            />
+        </div>
         <Content />
     </div>
 </div>

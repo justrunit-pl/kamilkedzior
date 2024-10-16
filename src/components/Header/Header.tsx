@@ -36,21 +36,21 @@ export const Header = ({hideLogo}: { hideLogo?: boolean}) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <nav className="flex text-white h-full w-full items-center px-4 justify-between gap-1">
-            {!hideLogo && <div className="grow">
-                <a href="/" className="whitespace-nowrap font-artistic flex border-2 rounded p-2 w-fit flex flex-col items-center justify-center">
+            {!hideLogo && <div className="grow w-full">
+                <a href="/" className="whitespace-nowrap font-artistic flex border-2 rounded p-2 w-fit flex-col items-center justify-center">
                     <span className="text-3xl">Kamil Kędzior</span>
                     <span className="text-sm">Psychoterapia Gestalt</span>
                 </a>
             </div>}
-            <div className="grow-[3] hidden lg:flex gap-4 justify-center">
+            <div className="w-full hidden lg:flex gap-4 justify-center whitespace-nowrap">
                 <ul className="flex font-[300] font-primary text-sm gap-6 px-4 text-center">
                     <li><NavLink href="/o-mnie/" label="O mnie"/></li>
-                    <li><NavLink href="/o-gestalt/" label="Gestalt - czym jest?"/></li>
-                    <li>Komu pomagam</li>
-                    <li><NavLink href="/oferta/" label="Oferuję"/></li>
+                    <li><NavLink href="/o-gestalt/" label="Moje podejście"/></li>
+                    <li><NavLink href="/oferta/" label="Oferta"/></li>
                     <li><NavLink href="/kontakt/" label="Kontakt"/></li>
                 </ul>
             </div>
+            <div className="grow-[1] h-full w-full" />
             <HamburgerButton className="lg:hidden" onPress={() => setIsMenuOpen(true)} />
             <div className={`fixed z-20 top-0 left-0 p-8 h-screen w-full bg-primary-800 text-white transform transition-transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <div className="w-full flex justify-end">
@@ -58,9 +58,8 @@ export const Header = ({hideLogo}: { hideLogo?: boolean}) => {
                 </div>
                 <ul className="flex flex-col font-primary items-start justify-start h-full gap-6 ">
                     <li><NavLink href="/o-mnie/" label="O mnie"/></li>
-                    <li><NavLink href="/o-gestalt/" label="Gestalt - czym jest?"/></li>
-                    <li>Komu pomagam</li>
-                    <li><NavLink href="/oferta/" label="Oferuję"/></li>
+                    <li><NavLink href="/o-gestalt/" label="Moje podejście"/></li>
+                    <li><NavLink href="/oferta/" label="Oferta"/></li>
                     <li><NavLink href="/kontakt/" label="Kontakt"/></li>
                 </ul>
             </div>

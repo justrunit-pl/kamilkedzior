@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Offer } from "../components/Offer/offer";
+import Offer from "../components/Offer.astro";
 ---
 <Layout title="Oferta">
-    <div class="h-full flex items-center">
-        <Offer client:load />
+    <div class="flex items-start">
+        <Offer />
     </div>
 </Layout>

@@ -1,0 +1,20 @@
+---
+import OfferItem from './OfferItem.astro';
+const offers = await Astro.glob('../content/offer-*.mdx');
+---
+
+<div class="flex gap-3 flex-wrap">
+    <div class="prose prose-sm">
+        <h1>Oferuję szeroki zakres usług w ramach psychoterapii Gestalt, w tym:
+        </h1>
+        <ul>
+            <li>terapia dostosowana do potrzeb każdego klienta</li>
+            <li>emocjonalne wsparcie w trudnych momentach życiowych</li>
+            <li>pomoc w rozwiązywaniu trudności w relacjach</li>
+            <li>terapię dla osób zmagających się z lękami</li>
+            <li>programy poprawiające poczucie jakości życia</li>
+            <li>wsparcie w procesie żałoby</li>
+            <li>pomoc w akceptacji siebie i osobistym rozwoju</li>
+        </ul>
+    </div>
+</div>

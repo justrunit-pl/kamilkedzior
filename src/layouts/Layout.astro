@@ -5,9 +5,10 @@ interface Props {
 	fullWidth?: boolean;
 	hideHeader?: boolean;
 	hideFooter?: boolean;
+	hideHeaderPlaceholder?: boolean;
 }
 
-const { title, fullWidth, hideHeader, hideFooter = hideHeader } = Astro.props;
+const { title, fullWidth, hideHeader, hideFooter = hideHeader, hideHeaderPlaceholder } = Astro.props;
 import '@fontsource/montserrat/100.css';
 import '@fontsource/montserrat/200.css';
 import '@fontsource/montserrat/300.css';
@@ -37,7 +38,8 @@ import { ViewTransitions } from 'astro:transitions';
 				<Header client:load />
 			</header>
 		}
-		<main class=`flex justify-center w-full ${fullWidth ? '' : 'px-4 [&>*]:max-w-[40rem] pb-2 pt-28'} grow`>
+		{ !hideHeaderPlaceholder && <div class="h-24 w-full" /> }
+		<main class=`flex justify-center w-full ${fullWidth ? '' : 'px-4 [&>*]:max-w-[40rem] pb-12 pt-16'} grow`>
 			<slot/>
 		</main>
 		{!hideFooter && <footer class="w-full h-fit">
