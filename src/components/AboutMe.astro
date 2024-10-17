@@ -6,28 +6,16 @@ import psychoterapeuta from '../images/psychoterapeuta.png';
 
 
 <div class="flex items-center justify-center flex-col relative w-full">
-    <div class="flex gap-8 h-full flex-col w-full">
-        <!--<div class="flex items-start">-->
-        <!--    <Img-->
-        <!--            breakpoints={{ count: 1 }}-->
-        <!--            placeholder="blurred"-->
-        <!--            objectFit="cover"-->
-        <!--            height="200px"-->
-        <!--            alt="zdjecie"-->
-        <!--            class="rounded-xl"-->
-        <!--            src="/src/images/0010.jpg"-->
-        <!--    />-->
-        <!--</div>-->
-        <div class="flex justify-center w-full">
-            <div class="prose prose-sm grow-[4] font-poppins w-full h-full">
-                <Content />
-            </div>
-        </div>
-        <!--<div class="flex flex-col justify-center h-full gap-1 grow-[4] w-full font-primary">-->
-        <!--    <h1 class="text-5xl">Kamil Kędzior</h1>-->
-        <!--    <h3 class="text-3xl">W drodze do siebie</h3>-->
-        <!--    <p>camillo@gmail.com</p>-->
-        <!--    <span><a href="tel:+48708708708">+48 708 708 708</a></span>-->
-        <!--</div>-->
+    <div class="prose flex h-full flex-col w-full">
+        <h1>O mnie</h1>
+        <Img
+                breakpoints={{ count: 1 }}
+                placeholder="blurred"
+                objectFit="cover"
+                alt="zdjecie"
+                attributes={{ img: { class: ` !w-48 rounded-xl m-0`}}}
+                src="/src/images/0010.jpg"
+        />
+        <Content />
     </div>
 </div>

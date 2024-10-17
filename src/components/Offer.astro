@@ -1,12 +1,17 @@
 ---
 import OfferItem from './OfferItem.astro';
 const offers = await Astro.glob('../content/offer-*.mdx');
+import { Img } from "astro-imagetools/components";
 ---
 
 <div class="flex gap-3 flex-wrap">
-    <div class="prose prose-sm">
-        <h1>Oferuję szeroki zakres usług w ramach psychoterapii Gestalt, w tym:
+    <div class="prose">
+        <h1>
+            Oferta
         </h1>
+        <h2>
+            Oferuję szeroki zakres usług w ramach psychoterapii Gestalt, w tym:
+        </h2>
         <ul>
             <li>terapia dostosowana do potrzeb każdego klienta</li>
             <li>emocjonalne wsparcie w trudnych momentach życiowych</li>
@@ -16,5 +21,14 @@ const offers = await Astro.glob('../content/offer-*.mdx');
             <li>wsparcie w procesie żałoby</li>
             <li>pomoc w akceptacji siebie i osobistym rozwoju</li>
         </ul>
+        <p>Sesja w cenie <strong>170 zł</strong> za <strong>50 minut</strong></p>
+        <Img
+                breakpoints={{ count: 1 }}
+                placeholder="blurred"
+                objectFit="cover"
+                attributes={{ img: { class: ` !w-full rounded-xl mb-0`}}}
+                alt="zdjecie"
+                src="/src/images/0016.jpg"
+        />
     </div>
 </div>

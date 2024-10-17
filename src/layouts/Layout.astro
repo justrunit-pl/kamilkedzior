@@ -20,13 +20,14 @@ import '@fontsource/montserrat/800.css';
 import "@fontsource/amatic-sc";
 import { Header } from '../components/Header/Header';
 import { ViewTransitions } from 'astro:transitions';
+import Logo from "../components/Logo.astro";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Oferuję profesjonalną psychoterapię Gestalt, indywidualną terapię oraz wsparcie emocjonalne. Pomagam w rozwoju osobistym, akceptacji siebie." />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -34,8 +35,13 @@ import { ViewTransitions } from 'astro:transitions';
 		<ViewTransitions />
 	</head>
 	<body class="font-primary font-light flex flex-col min-h-[100dvh] overflow-x-hidden">
-		{!hideHeader && <header class="fixed w-full h-24 top-0 z-10 bg-primary-500/95  backdrop-blur">
-				<Header client:load />
+		{!hideHeader &&
+			<header class="fixed w-full h-24 top-0 z-10 bg-primary-500/95  backdrop-blur">
+				<Header client:load>
+					<div class="w-full grow" slot="logo">
+						<Logo />
+					</div>
+				</Header>
 			</header>
 		}
 		{ !hideHeaderPlaceholder && <div class="h-24 w-full" /> }
