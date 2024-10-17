@@ -54,7 +54,7 @@ export const Header = ({hideLogo, logo, centerLogo = true, backgroundImage }: { 
                         {logo}
                         <ExitButton className="h-fit" onPress={() => setIsMenuOpen(false)}/>
                     </div>
-                    <ul className="flex flex-col font-primary items-start justify-start gap-6 border-l-2 pl-4 h-fit">
+                    <ul className="flex text-2xl font-se flex-col font-primary items-start justify-start gap-6 border-l-2 pl-4 h-fit">
                         <li><NavLink href="/o-mnie/" label="O mnie"/></li>
                         <li><NavLink href="/o-gestalt/" label="Moje podejście"/></li>
                         <li><NavLink href="/oferta/" label="Oferta"/></li>

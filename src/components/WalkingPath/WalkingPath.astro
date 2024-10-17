@@ -4,10 +4,10 @@ import styles from "./WalkingPath.module.scss";
 import { Img } from "astro-imagetools/components";
 ---
 
-<div class="h-screen w-screen absolute top-0 left-0 overflow-hidden  z-0">
+<div class="h-screen absolute top-0 left-0 overflow-hidden  z-0">
     <Img
             breakpoints={{ count: 1 }}
-            placeholder="blurred"
+            placeholder="dominantColor"
             objectFit="cover"
             attributes={{ img: { class: clsx("object-cover transition-all !h-full", styles.WalkingPath)}}}
             alt="Droga"
