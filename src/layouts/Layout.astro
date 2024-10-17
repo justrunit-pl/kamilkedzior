@@ -21,6 +21,8 @@ import "@fontsource/amatic-sc";
 import { Header } from '../components/Header/Header';
 import { ViewTransitions } from 'astro:transitions';
 import Logo from "../components/Logo.astro";
+import WalkingPath from "../components/WalkingPath/WalkingPath.astro";
+
 ---
 
 <!doctype html>
@@ -40,6 +42,9 @@ import Logo from "../components/Logo.astro";
 				<Header client:load>
 					<div class="w-full grow" slot="logo">
 						<Logo />
+					</div>
+					<div class="h-full w-full" slot="backgroundImage">
+						<WalkingPath />
 					</div>
 				</Header>
 			</header>

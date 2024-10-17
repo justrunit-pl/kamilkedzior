@@ -1,7 +1,6 @@
 import {type ReactNode, useState} from "react";
 import clsx from "clsx";
 import {Button, type ButtonProps} from "../Button";
-import {WalkingPath} from "../WalkingPath/WalkingPath.tsx";
 
 
 const HamburgerButton = ({ className, ...restProps }: ButtonProps) => {
@@ -33,7 +32,7 @@ const NavLink = ({href, label}: { href: string, label: string }) => {
     </a>
 }
 
-export const Header = ({hideLogo, logo, centerLogo = true }: { hideLogo?: boolean, logo: ReactNode, centerLogo?: boolean }) => {
+export const Header = ({hideLogo, logo, centerLogo = true, backgroundImage }: { hideLogo?: boolean, logo: ReactNode, centerLogo?: boolean, backgroundImage: ReactNode }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <nav className="flex text-white h-full w-full items-center px-4 justify-between gap-1">
@@ -49,8 +48,8 @@ export const Header = ({hideLogo, logo, centerLogo = true }: { hideLogo?: boolea
             {centerLogo && <div className="grow-[1] h-full w-full" />}
             <HamburgerButton className="lg:hidden" onPress={() => setIsMenuOpen(true)} />
             <div className={`fixed flex flex-col z-20 top-0 left-0 h-screen w-full text-white transform transition-transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-                {isMenuOpen && <WalkingPath />}
-                <div className="z-10 bg-primary-800/80 h-full w-full p-8 flex flex-col gap-12">
+                {isMenuOpen && backgroundImage}
+                <div className="z-10 absolute bg-primary-800/80 h-full w-full p-8 flex flex-col gap-12">
                     <div className="w-full flex justify-between items-center">
                         {logo}
                         <ExitButton className="h-fit" onPress={() => setIsMenuOpen(false)}/>
