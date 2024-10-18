@@ -5,7 +5,10 @@ import { astroImageTools } from "astro-imagetools";
 
 import mdx from "@astrojs/mdx";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind(), mdx(), astroImageTools]
+  site: 'https://kamilkedzior.pl',
+  integrations: [react(), tailwind(), mdx(), astroImageTools, sitemap()]
 });
