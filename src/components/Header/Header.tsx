@@ -49,7 +49,7 @@ export const Header = ({hideLogo, logo, centerLogo = true, backgroundImage }: { 
             <HamburgerButton className="lg:hidden" onPress={() => setIsMenuOpen(true)} />
             <div className={`fixed flex flex-col z-20 top-0 left-0 h-screen w-full text-white transform transition-transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 {isMenuOpen && backgroundImage}
-                <div className="z-10 absolute bg-primary-800/80 h-full w-full p-8 flex flex-col gap-12">
+                <div className="z-10 absolute bg-primary-800/80 h-full w-full pb-8 px-4 pt-2 flex flex-col gap-12">
                     <div className="w-full flex justify-between items-center">
                         {logo}
                         <ExitButton className="h-fit" onPress={() => setIsMenuOpen(false)}/>

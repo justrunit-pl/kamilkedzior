@@ -25,10 +25,10 @@ const Trail = ({ open, children, className }: { open: boolean, children: ReactNo
 
 export const LandingTitle = () => {
     return (
-        <div className="flex flex-col gap-1">
-            <Trail open={true} className="text-4xl font-bold !text-white">
-                <span className="text-4xl md:text-6xl">Kamil Kędzior</span>
-                <span className="text-2xl md:text-4xl font-semibold">Psychoterapia Gestalt</span>
+        <div className="flex flex-col gap-0.5">
+            <Trail open={true} className="text-4xl !text-white font-primary">
+                <span className="text-2xl md:text-3xl">Kamil Kędzior</span>
+                <span className="text-xl md:text-xl font-light">Psychoterapia Gestalt</span>
             </Trail>
         </div>
     )

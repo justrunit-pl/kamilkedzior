@@ -15,6 +15,7 @@ import '@fontsource/montserrat/600.css';
 import '@fontsource/montserrat/700.css';
 import '@fontsource/montserrat/800.css';
 import "@fontsource/amatic-sc";
+import "@fontsource/italianno"
 import { Header } from '../components/Header/Header';
 import { ViewTransitions } from 'astro:transitions';
 import Logo from "../components/Logo.astro";
@@ -35,7 +36,7 @@ import WalkingPath from "../components/WalkingPath/WalkingPath.astro";
 	</head>
 	<body class="font-primary font-light flex flex-col min-h-[100dvh] overflow-x-hidden">
 		{!hideHeader &&
-			<header class="fixed w-full h-24 top-0 z-10 bg-primary-500/95  backdrop-blur">
+			<header class="fixed w-full h-24 top-0 z-10 bg-primary-600/90 backdrop-blur">
 				<Header client:load>
 					<div class="w-full grow" slot="logo">
 						<Logo />

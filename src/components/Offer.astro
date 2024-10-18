@@ -2,26 +2,34 @@
 import OfferItem from './OfferItem.astro';
 const offers = await Astro.glob('../content/offer-*.mdx');
 import { Img } from "astro-imagetools/components";
+import Tag from "./Tag.astro";
 ---
 
 <div class="flex gap-3 flex-wrap">
     <div class="prose">
-        <h1>
+        <h1 class="underline decoration-primary-500 w-fit font-artistic text-5xl">
             Oferta
         </h1>
         <h2>
-            Oferuję szeroki zakres usług w ramach psychoterapii Gestalt, w tym:
+            Oferuję wsparcie w pracy z:
         </h2>
         <ul>
-            <li>terapia dostosowana do potrzeb każdego klienta</li>
-            <li>emocjonalne wsparcie w trudnych momentach życiowych</li>
-            <li>pomoc w rozwiązywaniu trudności w relacjach</li>
-            <li>terapię dla osób zmagających się z lękami</li>
-            <li>programy poprawiające poczucie jakości życia</li>
-            <li>wsparcie w procesie żałoby</li>
-            <li>pomoc w akceptacji siebie i osobistym rozwoju</li>
+            <li>Rozwojem osobistym</li>
+            <li>Przemocą w rodzinie</li>
+            <li>Lękiem</li>
+            <li>Strachem</li>
+            <li>Stratą, żałobą</li>
+            <li>Traumą</li>
+            <li>Trudnościami w relacjach</li>
+            <li>Poradnictwem dla par</li>
+            <li>Kryzysem w rodzinie</li>
+            <li>Myślami samobójczymi</li>
         </ul>
-        <p>Sesja w cenie <strong>170 zł</strong> za <strong>50 minut</strong></p>
+        <div class="flex flex-col gap-3">
+            <OfferItem label="Poradnictwo dla par" time="60" price="200" />
+            <OfferItem label="Sesja konsultacyjna" time="60" price="180" />
+            <OfferItem label="Sesja terapeutyczna" time="50" price="170" />
+        </div>
         <Img
                 breakpoints={{ count: 1 }}
                 placeholder="blurred"

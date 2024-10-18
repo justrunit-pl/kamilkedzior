@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily: {
         primary: ['Montserrat', ...defaultTheme.fontFamily.sans],
-        artistic: ['Amatic SC', ...defaultTheme.fontFamily.sans]
+        artistic: ['Amatic SC', ...defaultTheme.fontFamily.sans],
+        handwriting: ['Italianno', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {
